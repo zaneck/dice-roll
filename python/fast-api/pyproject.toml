@@ -1,0 +1,69 @@
+[project]
+name = "fast-api"
+version = "0.1.0"
+description = "fast-api version"
+authors = [{ name = "Zaneck", email = "val.owczarek@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard] (>=0.116.1,<0.117.0)",
+    "pydantic-settings (>=2.10.1,<3.0.0)",
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+ruff = "^0.12.12"
+pytest-cov = "^6.2.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+#########################
+# Tooling Configuration #
+#########################
+[tool.ruff.lint]
+select = ["I", "E", "F", "S", "PT", "PD", "N", "Q", "ANN"]
+
+[tool.ruff.lint.isort]
+# In order for isort to correctly behave
+known-first-party = ["src"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = [
+    "S101", # asserts allowed in tests...
+]
+
+########################
+# Pytest Configuration #
+########################
+
+[tool.pytest.ini_options]
+
+# Collect tests files matching the following patterns
+pythonpath = "src"
+# python_files = "test_*.py, *_test.py"
+
+# Collect tests files from this root folder if none are specified in command line
+testpaths = "tests"
+
+# Always include the following arguments to the command line (even if the user didn't specified it)
+    # --ds      : defining a specific python module to run (context/environment variables for example)
+    # --ignore  : remove path from file collection
+addopts = "-vs --cov=. --cov-report term-missing --cov-report html:coverage-report"
+
+
+# Pytest outputs log file
+# log_file = logs/pytest-logs.txt
+console_output_style = "progress"
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s %(levelname)s %(name)16s%(funcName)+16s:%(lineno)-4d %(message)s"
+log_format = "%(asctime)s %(levelname)s %(name)16s%(funcName)+16s:%(lineno)-4d %(message)s"
+
+[tool.coverage.run]
+omit = [
+    "tests/*"
+]
