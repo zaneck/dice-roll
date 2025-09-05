@@ -11,4 +11,12 @@ tests:
 poetry_update:
 	python3 -m poetry update
 
-.PHONY: run format tests poetry_update
+clean:
+	rm -rf .pytest_cache
+	find . -type d -name '__pycache__' -exec rm -rf {} +
+	rm -rf .ruff_cache
+	rm -rf .coverage
+	rm -rf coverage-report
+
+
+.PHONY: run format tests poetry_update clean
