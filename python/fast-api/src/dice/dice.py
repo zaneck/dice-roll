@@ -7,3 +7,6 @@ class Dice:
 
     def roll(self) -> int:
         return secrets.randbelow(self.sides) + 1
+
+    def __repr__(self) -> str:
+        return f"Dice(sides={self.sides})"

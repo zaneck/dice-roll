@@ -5,8 +5,10 @@ from pydantic import BaseModel
 
 router = APIRouter(tags=["Status"])
 
+
 class StatusResponseModel(BaseModel):
     status: str = "OK"
+
 
 @router.get("/status", response_model=StatusResponseModel)
 async def status() -> StatusResponseModel:

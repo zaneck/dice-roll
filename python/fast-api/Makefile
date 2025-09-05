@@ -6,7 +6,7 @@ format:
 	python3 -m ruff check --fix src tests
 
 tests:
-	python3 -m poetry run pytest -vv
+	python3 -m poetry run pytest -vvv
 
 poetry_update:
 	python3 -m poetry update
