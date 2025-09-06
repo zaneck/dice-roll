@@ -15,7 +15,7 @@ use axum_dice::config::Config;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let config = Config::default();
+    let config = Config::default_config();
     println!("Starting {}...", config.title);
     
     #[derive(OpenApi)]

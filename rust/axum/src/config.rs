@@ -8,7 +8,7 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn default() -> Self {
+    pub fn default_config() -> Self {
         Config {
             title: "Dice Roll API".to_string(),
             description: "API for rolling dice".to_string(),
