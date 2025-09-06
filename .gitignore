@@ -78,3 +78,21 @@ cython_debug/
 
 # VS Code settings
 .vscode/
+
+
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+Cargo.toml.orig
+
+# Rust/Cargo specific
+/.cargo/
+*.rs.bk
+
+# Rustup
+.rustup/
+
+# Clippy
+clippy.toml
+.clippy.toml

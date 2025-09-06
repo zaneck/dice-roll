@@ -1,0 +1,20 @@
+[package]
+name = "axum-dice"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8.0"
+hyper = { version = "1.0.1", features = ["full"] }
+rand = "0.9.2"
+serde = { version = "1.0", features = ["derive"] }
+statistical = "1.0.0"
+tokio = { version = "1.17", features = ["full"] }
+tower = "0.5"
+utoipa = { version = "5.4.0", features = ["axum_extras"] }
+utoipa-axum = { version = "0.2.0" }
+utoipa-rapidoc = { version = "6.0.0", features = ["axum"] }
+utoipa-redoc = { version = "6.0.0", features = ["axum"] }
+utoipa-scalar = { version = "0.3.0", features = ["axum"] }
+utoipa-swagger-ui = { version = "9.0.2", features = ["axum"] }
+
